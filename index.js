@@ -6,6 +6,8 @@ const credentials = require ('./credentials.json')
 const docId = '193CaJoiEFEtU5VzK9-jWT_HobuwImr5NW2w4tHfQfes'
 
 
+
+
 function mostrarAlunos (aluno){
   console.log(`Matricula: ${aluno.matricula}`)
   console.log(`Nome: ${aluno.aluno}`)
@@ -41,10 +43,10 @@ async function accessSpreadsheets (){
    
      if (media >= 70){
       alunos.resultado = "Aprovado"
-     }else if (media < 70){
+     }else if (media < 70 && media >= 50){
       alunos.resultado = "Exame Final"
      }else if (media < 50){
-      alunos.resultado = "Reprovado"
+      alunos.resultado = "Reprovado por Nota"
      }
 
      alunos.notaAprovacao = parseInt(210 - (alunos.notaUm + alunos.notaDois + alunos.notaTres));
